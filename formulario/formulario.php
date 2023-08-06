@@ -43,6 +43,7 @@
     <link rel="stylesheet" href="formulario.css">
 </head>
 <body>
+    <a href="../pagina_inicial/tela_inicial.php">Voltar</a>
     <div class="box">
         <form action="formulario.php" method="POST">
             <fieldset>
@@ -50,7 +51,12 @@
                 <br>
                 <div class="inputBox">
                     <input type="text" name="nome" id="nome" class="inputUser" required>
-                    <label for="nome" class="labelInput">Nome completo</label>
+                    <label for="nome" class="labelInput">Nome Completo</label>
+                </div>
+                <br>
+                <div class="inputBox">
+                    <input type="password" name="senha" id="senha" class="inputUser" required>
+                    <label for="senha" class="labelInput">Senha</label>
                 </div>
                 <br>
                 <div class="inputBox">
