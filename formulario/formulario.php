@@ -1,3 +1,39 @@
+<?php
+
+    if(isset($_POST['submit'])) {
+            // print_r('Nome: ' . $_POST['nome']);
+            // print_r('<br>');
+            // print_r('Email: ' .$_POST['email']);
+            // print_r('<br>');
+            // print_r('Telefone: ' .$_POST['telefone']);
+            // print_r('<br>');
+            // print_r('Sexo: ' . $_POST['genero']);
+            // print_r('<br>');
+            // print_r('Data de Nascimento: ' .$_POST['data_nascimento']);
+            // print_r('<br>');
+            // print_r('Cidade: ' .$_POST['cidade']);
+            // print_r('<br>');
+            // print_r('Estado: ' .$_POST['estado']);
+            // print_r('<br>');
+            // print_r('Endereço: ' .$_POST['endereco']);
+            // print_r('<br>');
+
+        include_once('../config.php');
+
+        $nome = $_POST['nome'];
+        $email = $_POST['email'];
+        $telefone = $_POST['telefone'];
+        $sexo = $_POST['genero'];
+        $data_nascimento = $_POST['data_nascimento'];
+        $cidade = $_POST['cidade'];
+        $estado = $_POST['estado'];
+        $endereco = $_POST['endereco'];
+
+        $result = mysqli_query($conexao, "INSERT INTO usuarios(nome,email,telefone,sexo,data_nasc,cidade,estado,endereco) VALUES ('$nome','$email','$telefone','$sexo','$data_nascimento','$cidade','$estado','$endereco')");
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +44,7 @@
 </head>
 <body>
     <div class="box">
-        <form action="">
+        <form action="formulario.php" method="POST">
             <fieldset>
                 <legend class="formulario"><b>Formulário de Clientes</b></legend>
                 <br>
@@ -26,7 +62,7 @@
                     <input type="tel" name="telefone" id="telefone" class="inputUser" required>
                     <label for="telefone" class="labelInput">Telefone</label>
                 </div>
-                <br><br>
+                <br>
                 <p><b>Sexo:</b></p>
                 <input type="radio" id="feminino" name="genero" value="feminino" required>
                 <label for="feminino">Feminino</label>
@@ -34,9 +70,9 @@
                 <label for="masculino">Masculino</label>
                 <input type="radio" id="outro" name="genero" value="outro" required>
                 <label for="outro">Outro</label>
-                <br><br>
+                <br><br><br>
                 <div class="inputBox">
-                    <label for="data_nascimento"><b>Data de Nascimento</b></label>
+                    <label for="data_nascimento"><b>Data de Nascimento:</b></label>
                     <input type="date" name="data_nascimento" id="data_nascimento" class="inputBox">
                 </div>
                 <br><br>
